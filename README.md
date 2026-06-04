@@ -31,3 +31,13 @@ Optional dependencies are only needed when using spectral input features:
 ```bash
 conda install scipy scikit-learn -c conda-forge -y
 ```
+# Experimental Data and parameters
+
+**Explanation:**
+
+- `--task 'prob'`: Select signal probability prediction(SPP) task.
+- `--model 'DualGate'`: Use DualGate model.
+- `--batch_size 8`: Set the batch size required for training..
+- `--split_file 0.05-0.05-0.9`: Indicates the data split proportions for training, validation, and testing.
+- `--layer_num 15`: Set the number of layers of the AIGer network to 15.
+
