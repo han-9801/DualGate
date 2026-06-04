@@ -9,3 +9,25 @@ Specifically, our method first employs a gate-type-aware graph decoupling compon
 It then introduces a dual-channel complementary semantic propagation component, leveraging dual initialization and cross-channel \texttt{NOT} propagation to maintain the identifiability of complementary logical semantics. 
 In addition, a gated adaptive aggregation component is developed, which enforces binary pairing at the input side and constructs a feature-interaction-aware difference-aware gating mechanism, thereby providing a learnable mechanism to modulate the contributions of \texttt{AND}-gate inputs according to their interaction patterns.
 Experimental results demonstrate that DualGate consistently outperforms existing state-of-the-art methods, achieving MAE and MSE improvements of 16.07\% and 33.33\% on Signal Probability Prediction, respectively, as well as 29.62\% and 23.65\% on Truth Table Distance Prediction, respectively.
+# Environment
+The code is implemented in Python with PyTorch. We recommend using Conda to
+create an isolated environment:
+```bash
+conda env create -f environment.yml
+conda activate dualgate
+```
+If you prefer to create the environment manually:
+```bash
+conda create -n dualgate python=3.10 -y
+conda activate dualgate
+conda install dualgate numpy tqdm -c pytorch -c conda-forge -y
+```
+For CUDA-enabled training, install the PyTorch build that matches your local
+CUDA driver. For example:
+```bash
+conda install pytorch pytorch-cuda=12.1 numpy tqdm -c pytorch -c nvidia -c conda-forge -y
+```
+Optional dependencies are only needed when using spectral input features:
+```bash
+conda install scipy scikit-learn -c conda-forge -y
+```
